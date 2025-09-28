@@ -1,13 +1,678 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Business Management Dashboard</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucro Fácil</title>
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/3rbMsc2H/image.png">
+    <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/3rbMsc2H/image.png">
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '803672278877754');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=803672278877754&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        .yellow-gradient { background: linear-gradient(to bottom, #fbbf24, #f59e0b); }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="sticky top-0 z-40 w-full border-b bg-white/80 backdrop-blur">
+        <div class="mx-auto max-w-6xl px-4">
+            <div class="h-16 md:h-20 flex items-center justify-between">
+                <img src="https://i.postimg.cc/3rbMsc2H/image.png" alt="Lucro Fácil" class="h-12 md:h-24 w-auto">
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a href="#recursos" class="hover:text-yellow-600 transition-colors">Recursos</a>
+                    <a href="#como-funciona" class="hover:text-yellow-600 transition-colors">Como funciona</a>
+                    <a href="#planos" class="hover:text-yellow-600 transition-colors">Planos</a>
+                    <a href="#depoimentos" class="hover:text-yellow-600 transition-colors">Depoimentos</a>
+                    <a href="#entrar" class="text-yellow-600">Entrar</a>
+                    <a href="#cta" class="ml-2 inline-flex items-center rounded-full bg-yellow-600 px-4 py-2 text-white hover:bg-yellow-700 transition-colors">Começar</a>
+                </nav>
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden bg-yellow-600 text-white px-4 py-2 rounded-full text-sm font-medium">
+                    Menu
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-b from-white to-yellow-50/40">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6 py-6 sm:py-8 md:py-12 lg:py-16">
+            <!-- Mobile: Text first, then image -->
+            <div class="lg:hidden">
+                <div class="text-center mb-8">
+                    <!-- Logo no topo - apenas mobile -->
+                    <div class="mb-6">
+                        <img src="https://i.postimg.cc/3rbMsc2H/image.png" alt="Lucro Fácil" class="h-16 sm:h-20 w-auto mx-auto">
+                    </div>
+                    
+                    <h1 class="text-2xl sm:text-3xl font-extrabold leading-tight tracking-tight mb-4">
+                        Pare de perder tempo e dinheiro com sistemas caros e <span class="text-yellow-600">planilhas confusas</span>.
+                    </h1>
+                    <p class="text-sm sm:text-base text-neutral-600 mb-4">
+                        Com o Lucro Fácil, seu assistente de IA calcula em segundos o preço ideal do seu produto ou serviço, mostra sua margem de lucro real e gera um relatório completo para você.
+                    </p>
+                    <p class="text-sm sm:text-base font-semibold text-yellow-600 mb-6">
+                        Rápido, simples e sem mensalidades!
+                    </p>
+                    
+                    <div class="flex flex-col gap-3 mb-4">
+                        <a href="https://pay.cakto.com.br/33ykxnv" target="_blank" onclick="fbq('track', 'InitiateCheckout');" class="w-full inline-flex items-center justify-center rounded-xl bg-yellow-600 px-6 py-3 text-sm text-white font-semibold shadow hover:bg-yellow-700 hover:shadow-lg transition-all">
+                            Quero meu acesso ao Lucro Fácil agora →
+                        </a>
+                    </div>
+                    <div class="flex flex-col gap-2 text-xs text-neutral-600 mb-8">
+                        <div class="flex items-center justify-center gap-2">
+                            <span class="text-green-600">✓</span> Pagamento único de R$ 67
+                        </div>
+                        <div class="flex items-center justify-center gap-2">
+                            <span class="text-green-600">✓</span> Teste de 7 dias sem risco
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img 
+                        src="https://i.postimg.cc/RCKqv1pF/image.png" 
+                        alt="Lucro Fácil - Interface do Sistema"
+                        class="mx-auto w-full max-w-sm h-auto object-contain"
+                    />
+                </div>
+            </div>
+            
+            <!-- Desktop: Side by side layout -->
+            <div class="hidden lg:grid lg:grid-cols-2 gap-10 items-center">
+                <div class="text-left">
+                    <h1 class="text-4xl xl:text-5xl font-extrabold leading-tight tracking-tight">
+                        Pare de perder tempo e dinheiro com sistemas caros e <span class="text-yellow-600">planilhas confusas</span>.
+                    </h1>
+                    <p class="mt-4 text-lg text-neutral-600 max-w-xl">
+                        Com o Lucro Fácil, seu assistente de IA calcula em segundos o preço ideal do seu produto ou serviço, mostra sua margem de lucro real e gera um relatório completo para você.
+                    </p>
+                    <p class="mt-3 text-lg font-semibold text-yellow-600 max-w-xl">
+                        Rápido, simples e sem mensalidades!
+                    </p>
+                    <div class="mt-8 flex flex-row items-center gap-3">
+                        <a href="https://pay.cakto.com.br/33ykxnv" target="_blank" onclick="fbq('track', 'InitiateCheckout');" class="inline-flex items-center justify-center rounded-xl bg-yellow-600 px-8 py-4 text-base text-white font-semibold shadow hover:bg-yellow-700 hover:shadow-lg transition-all">
+                            Quero meu acesso ao Lucro Fácil agora →
+                        </a>
+                    </div>
+                    <div class="mt-6 flex flex-row items-center gap-4 text-sm text-neutral-600">
+                        <div class="flex items-center gap-2">
+                            <span class="text-green-600">✓</span> Pagamento único de R$ 67
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-green-600">✓</span> Teste de 7 dias sem risco
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img 
+                        src="https://i.postimg.cc/RCKqv1pF/image.png" 
+                        alt="Lucro Fácil - Interface do Sistema"
+                        class="mx-auto w-[90%] h-auto object-contain"
+                    />
+                    <div class="absolute -bottom-6 -right-6">
+                        <div class="w-24 h-24 rounded-full bg-yellow-400/80 blur-2xl"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recursos -->
+    <section class="py-8 sm:py-12 md:py-16 lg:py-20">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6">
+            <div class="text-center mb-8 sm:mb-12 md:mb-16">
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight">O Lucro Fácil é seu assistente de precificação com IA</h2>
+                <p class="text-neutral-600 mt-2 sm:mt-3 max-w-2xl mx-auto text-xs sm:text-sm md:text-base">Elimina a complicação e entrega clareza. Com ele, você sabe em segundos:</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
+                <div class="rounded-lg border border-gray-200 bg-white p-4 sm:p-5 md:p-6 hover:border-yellow-300 transition-colors duration-200">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-yellow-500 flex items-center justify-center mb-3 sm:mb-4">
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-1 sm:mb-2">Preço Ideal</h3>
+                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Descubra o preço certo do seu produto ou serviço em segundos.</p>
+                </div>
+                <div class="rounded-lg border border-gray-200 bg-white p-4 sm:p-5 md:p-6 hover:border-yellow-300 transition-colors duration-200">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-yellow-500 flex items-center justify-center mb-3 sm:mb-4">
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-1 sm:mb-2">Margem de Lucro</h3>
+                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Saiba exatamente quanto você está lucrando por venda.</p>
+                </div>
+                <div class="rounded-lg border border-gray-200 bg-white p-4 sm:p-5 md:p-6 hover:border-yellow-300 transition-colors duration-200">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-yellow-500 flex items-center justify-center mb-3 sm:mb-4">
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-1 sm:mb-2">Meta de Vendas</h3>
+                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Calcule quantas vendas precisa para bater sua meta de faturamento.</p>
+                </div>
+                <div class="rounded-lg border border-gray-200 bg-white p-4 sm:p-5 md:p-6 hover:border-yellow-300 transition-colors duration-200">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-yellow-500 flex items-center justify-center mb-3 sm:mb-4">
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-1 sm:mb-2">Relatório PDF</h3>
+                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Receba um relatório organizado pronto para salvar e usar.</p>
+                </div>
+                <div class="rounded-lg border border-gray-200 bg-white p-4 sm:p-5 md:p-6 hover:border-yellow-300 transition-colors duration-200">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-yellow-500 flex items-center justify-center mb-3 sm:mb-4">
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-1 sm:mb-2">Automação</h3>
+                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Elimine a confusão das planilhas e sistemas caros.</p>
+                </div>
+                <div class="rounded-lg border border-gray-200 bg-white p-4 sm:p-5 md:p-6 hover:border-yellow-300 transition-colors duration-200">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-yellow-500 flex items-center justify-center mb-3 sm:mb-4">
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-base sm:text-lg font-semibold text-gray-900 mb-1 sm:mb-2">Inteligência Artificial</h3>
+                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Precificação inteligente que entrega clareza na hora.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exemplo Real -->
+    <section class="py-12 md:py-20 bg-neutral-50">
+        <div class="mx-auto max-w-6xl px-4">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">Exemplo real</h2>
+                <p class="text-neutral-600 mt-2 max-w-2xl mx-auto text-sm md:text-base">Veja como funciona na prática com um produto real:</p>
+            </div>
+            
+            <!-- Mobile Chat Interface -->
+            <div class="max-w-sm mx-auto">
+                <!-- Phone Frame -->
+                <div class="bg-black rounded-[2.5rem] p-2 shadow-2xl">
+                    <div class="bg-white rounded-[2rem] overflow-hidden">
+                        <!-- Status Bar -->
+                        <div class="bg-gray-900 px-4 py-1 flex justify-between items-center text-white text-xs">
+                            <span>9:41</span>
+                            <div class="flex items-center gap-1">
+                                <div class="flex gap-1">
+                                    <div class="w-1 h-1 bg-white rounded-full"></div>
+                                    <div class="w-1 h-1 bg-white rounded-full"></div>
+                                    <div class="w-1 h-1 bg-white rounded-full"></div>
+                                </div>
+                                <span class="ml-1">100%</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Chat Header -->
+                        <div class="bg-yellow-500 px-4 py-3 flex items-center gap-3">
+                            <img src="https://i.postimg.cc/pLSJxKqb/Chat-GPT-Image-25-de-set-de-2025-14-49-32.png" alt="Lucro Fácil" class="w-10 h-10 rounded-full bg-white p-1">
+                            <div class="flex-1">
+                                <h3 class="text-black font-semibold text-sm">Lucro Fácil</h3>
+                                <p class="text-black/70 text-xs">Online agora</p>
+                            </div>
+                            <div class="flex gap-2">
+                                <div class="w-6 h-6 bg-black/10 rounded-full flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-black" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                                    </svg>
+                                </div>
+                                <div class="w-6 h-6 bg-black/10 rounded-full flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-black" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                                        <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Chat Messages -->
+                        <div class="bg-gray-100 p-3 space-y-3 min-h-[500px]">
+                            <!-- User Message -->
+                            <div class="flex justify-end">
+                                <div class="bg-yellow-500 text-black rounded-2xl rounded-br-md px-3 py-2 max-w-[250px]">
+                                    <p class="text-xs">Oi! Preciso precificar uma camiseta básica. Custo R$ 25, quero 100% de margem, comissão 10% e meta de R$ 2.000</p>
+                                    <p class="text-xs text-black/60 mt-1 text-right">14:32 ✓✓</p>
+                                </div>
+                            </div>
+
+                            <!-- Bot Typing -->
+                            <div class="flex justify-start items-end gap-2">
+                                <img src="https://i.postimg.cc/pLSJxKqb/Chat-GPT-Image-25-de-set-de-2025-14-49-32.png" alt="Lucro Fácil" class="w-6 h-6 rounded-full bg-white p-0.5">
+                                <div class="bg-white text-gray-600 rounded-2xl rounded-bl-md px-3 py-2 max-w-[200px] shadow-sm">
+                                    <div class="flex items-center gap-1">
+                                        <div class="flex gap-1">
+                                            <div class="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce"></div>
+                                            <div class="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                                            <div class="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+                                        </div>
+                                        <span class="text-xs ml-2">Calculando...</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Bot Response -->
+                            <div class="flex justify-start items-end gap-2">
+                                <img src="https://i.postimg.cc/pLSJxKqb/Chat-GPT-Image-25-de-set-de-2025-14-49-32.png" alt="Lucro Fácil" class="w-6 h-6 rounded-full bg-white p-0.5">
+                                <div class="bg-white text-black rounded-2xl rounded-bl-md px-3 py-2 max-w-[250px] shadow-sm">
+                                    <p class="text-xs mb-2 text-green-600 font-medium">Cálculo concluído</p>
+                                    <div class="space-y-1 text-xs">
+                                        <div class="flex justify-between">
+                                            <span class="text-gray-600">Preço sugerido:</span>
+                                            <span class="font-bold text-yellow-600">R$ 55,00</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span class="text-gray-600">Lucro por peça:</span>
+                                            <span class="font-bold text-green-600">R$ 25,00</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span class="text-gray-600">Vendas necessárias:</span>
+                                            <span class="font-bold text-blue-600">37 unidades</span>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 pt-2 border-t border-gray-200">
+                                        <p class="text-xs text-gray-600">Relatório PDF gerado</p>
+                                    </div>
+                                    <p class="text-xs text-gray-500 mt-1">14:32</p>
+                                </div>
+                            </div>
+
+                            <!-- User Reaction -->
+                            <div class="flex justify-end">
+                                <div class="bg-yellow-500 text-black rounded-2xl rounded-br-md px-3 py-2 max-w-[200px]">
+                                    <p class="text-xs">Perfeito! Muito mais fácil que planilhas</p>
+                                    <p class="text-xs text-black/60 mt-1 text-right">14:33 ✓✓</p>
+                                </div>
+                            </div>
+
+                            <!-- Bot Final Message -->
+                            <div class="flex justify-start items-end gap-2">
+                                <img src="https://i.postimg.cc/pLSJxKqb/Chat-GPT-Image-25-de-set-de-2025-14-49-32.png" alt="Lucro Fácil" class="w-6 h-6 rounded-full bg-white p-0.5">
+                                <div class="bg-white text-black rounded-2xl rounded-bl-md px-3 py-2 max-w-[250px] shadow-sm">
+                                    <p class="text-xs">Fico feliz em ajudar! Seu PDF está pronto para download. Precisa de mais alguma precificação?</p>
+                                    <p class="text-xs text-gray-500 mt-1">14:33</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Chat Input -->
+                        <div class="bg-white border-t px-3 py-2 flex items-center gap-2">
+                            <div class="flex-1 bg-gray-100 rounded-full px-3 py-2 flex items-center gap-2">
+                                <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-.464 5.535a1 1 0 10-1.415-1.414 3 3 0 01-4.242 0 1 1 0 00-1.415 1.414 5 5 0 007.072 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <input type="text" placeholder="Mensagem" class="flex-1 bg-transparent text-xs placeholder-gray-400 outline-none" disabled>
+                                <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <button class="bg-yellow-500 text-black rounded-full p-2 hover:bg-yellow-600 transition-colors">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefits Below Chat -->
+                <div class="mt-8 grid sm:grid-cols-3 gap-4">
+                    <div class="text-center p-4 bg-white rounded-lg border border-gray-200">
+                        <div class="w-8 h-8 bg-yellow-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-gray-800 mb-1">Instantâneo</h4>
+                        <p class="text-xs sm:text-sm text-gray-600">Resultado em segundos</p>
+                    </div>
+                    <div class="text-center p-4 bg-white rounded-lg border border-gray-200">
+                        <div class="w-8 h-8 bg-yellow-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-gray-800 mb-1">Inteligente</h4>
+                        <p class="text-xs sm:text-sm text-gray-600">IA que entende seu negócio</p>
+                    </div>
+                    <div class="text-center p-4 bg-white rounded-lg border border-gray-200">
+                        <div class="w-8 h-8 bg-yellow-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-gray-800 mb-1">Simples</h4>
+                        <p class="text-xs sm:text-sm text-gray-600">Como conversar no chat</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Para quem é -->
+            <div class="mt-16 bg-white rounded-lg border border-gray-200 p-6 md:p-8">
+                <h3 class="text-xl md:text-2xl font-semibold mb-6 text-center text-gray-900">Para quem é o Lucro Fácil</h3>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                    <div class="text-center p-4 rounded-lg bg-gray-50 border border-gray-200">
+                        <div class="w-10 h-10 bg-yellow-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-gray-800 mb-1">Donos de lojas</h4>
+                        <p class="text-xs sm:text-sm text-gray-600">Físicas e online</p>
+                    </div>
+                    <div class="text-center p-4 rounded-lg bg-gray-50 border border-gray-200">
+                        <div class="w-10 h-10 bg-yellow-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2V6"></path>
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-gray-800 mb-1">Prestadores de serviço</h4>
+                        <p class="text-xs sm:text-sm text-gray-600">Qualquer área</p>
+                    </div>
+                    <div class="text-center p-4 rounded-lg bg-gray-50 border border-gray-200">
+                        <div class="w-10 h-10 bg-yellow-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-gray-800 mb-1">Pequenos empreendedores</h4>
+                        <p class="text-xs sm:text-sm text-gray-600">Que querem clareza no lucro</p>
+                    </div>
+                    <div class="text-center p-4 rounded-lg bg-gray-50 border border-gray-200">
+                        <div class="w-10 h-10 bg-yellow-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-gray-800 mb-1">Quem está começando</h4>
+                        <p class="text-xs sm:text-sm text-gray-600">Sem gastar com sistemas caros</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sem enrolação -->
+            <div class="mt-12 bg-gray-50 rounded-lg border border-gray-200 p-6 md:p-8">
+                <h3 class="text-xl md:text-2xl font-semibold mb-6 text-center text-gray-900">Sem complicação</h3>
+                <div class="grid sm:grid-cols-3 gap-4 md:gap-6">
+                    <div class="text-center p-4">
+                        <div class="w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-gray-800 mb-1">Sem planilhas complicadas</h4>
+                        <p class="text-xs sm:text-sm text-gray-600">Interface simples e intuitiva</p>
+                    </div>
+                    <div class="text-center p-4">
+                        <div class="w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-gray-800 mb-1">Sem mensalidades abusivas</h4>
+                        <p class="text-xs sm:text-sm text-gray-600">Pagamento único e justo</p>
+                    </div>
+                    <div class="text-center p-4">
+                        <div class="w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-gray-800 mb-1">Sem consultores caros</h4>
+                        <p class="text-xs sm:text-sm text-gray-600">Autonomia total para você</p>
+                    </div>
+                </div>
+                <div class="mt-6 text-center">
+                    <p class="text-gray-700 font-medium">O Lucro Fácil cabe no seu bolso e entrega precificação profissional na hora.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planos -->
+    <section class="py-8 sm:py-12 md:py-16 lg:py-20">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6">
+            <div class="text-center mb-8 sm:mb-12 md:mb-16">
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight">Oferta Especial de Lançamento</h2>
+                <p class="text-neutral-600 mt-2 sm:mt-3 max-w-2xl mx-auto text-xs sm:text-sm md:text-base">Hoje você pode acessar o Lucro Fácil por apenas:</p>
+            </div>
+            <div class="grid grid-cols-1 gap-6 max-w-2xl mx-auto">
+                <div class="rounded-2xl border p-4 sm:p-5 md:p-6 ring-2 ring-red-500 bg-red-50/50 hover:shadow-lg transition-all duration-300">
+                    <div class="text-center mb-3 sm:mb-4">
+                        <span class="inline-flex items-center rounded-full bg-red-600 px-2 sm:px-3 py-1 text-xs font-medium text-white">
+                            Oferta Limitada
+                        </span>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-lg sm:text-xl font-bold">Lucro Fácil</h3>
+                        <p class="text-neutral-600 text-xs sm:text-sm mt-1">Pagamento único, acesso vitalício</p>
+                        <div class="mt-3 sm:mt-4 mb-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <span class="text-sm sm:text-lg text-gray-500 line-through">De R$ 197,00</span>
+                            </div>
+                            <div class="flex items-center justify-center gap-2">
+                                <span class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-green-600">R$ 67,00</span>
+                            </div>
+                            <p class="text-xs sm:text-sm text-gray-600 mt-1 sm:mt-2">ou 12x de R$ 5,58 sem juros</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
+                        <li class="flex items-start gap-2 text-xs sm:text-sm">
+                            <span class="text-green-600 mt-0.5">✓</span>
+                            <span>Assistente inteligente de precificação</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-xs sm:text-sm">
+                            <span class="text-green-600 mt-0.5">✓</span>
+                            <span>Relatório em PDF de cada cálculo</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-xs sm:text-sm">
+                            <span class="text-green-600 mt-0.5">✓</span>
+                            <span>Aula ensinando como usar o sistema</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-xs sm:text-sm">
+                            <span class="text-green-600 mt-0.5">✓</span>
+                            <span>Manual completo de uso</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-xs sm:text-sm">
+                            <span class="text-green-600 mt-0.5">✓</span>
+                            <span>Acesso vitalício</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-xs sm:text-sm">
+                            <span class="text-green-600 mt-0.5">✓</span>
+                            <span>7 dias de garantia incondicional</span>
+                        </li>
+                    </ul>
+                    
+                    <!-- Métodos de Pagamento -->
+                    <div class="mb-6 p-4 bg-gray-50 rounded-lg">
+                        <p class="text-sm font-medium text-gray-700 mb-2 text-center">Métodos de pagamento:</p>
+                        <div class="flex items-center justify-center gap-2 mb-2">
+                            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">PIX</span>
+                            <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Cartão</span>
+                        </div>
+                        <p class="text-xs text-gray-500 text-center">Hospedado na Cackto - Pagamento 100% seguro</p>
+                    </div>
+
+                    <a href="https://pay.cakto.com.br/33ykxnv" target="_blank" onclick="fbq('track', 'InitiateCheckout');" class="w-full inline-flex items-center justify-center rounded-xl py-2.5 sm:py-3 text-sm sm:text-base font-semibold transition-colors bg-green-600 text-white hover:bg-green-700">
+                        Quero meu acesso ao Lucro Fácil agora
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Garantia -->
+    <section class="py-8 sm:py-12 bg-gray-50">
+        <div class="mx-auto max-w-4xl px-4 sm:px-6">
+            <div class="text-center">
+                <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                </div>
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4">7 Dias de Garantia Incondicional</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto mb-4 sm:mb-6 text-sm sm:text-base">
+                    Teste o Lucro Fácil por 7 dias completos. Se não ficar satisfeito por qualquer motivo, 
+                    devolvemos 100% do seu dinheiro sem perguntas.
+                </p>
+                <div class="grid md:grid-cols-3 gap-4 sm:gap-6 mt-6 sm:mt-8">
+                    <div class="text-center">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-2 sm:mb-3">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">7 dias completos</h3>
+                        <p class="text-xs sm:text-sm text-gray-600">Tempo suficiente para testar todas as funcionalidades</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-2 sm:mb-3">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">100% seguro</h3>
+                        <p class="text-xs sm:text-sm text-gray-600">Sem riscos, sem pegadinhas, sem letras miúdas</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-2 sm:mb-3">
+                            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">Reembolso rápido</h3>
+                        <p class="text-xs sm:text-sm text-gray-600">Dinheiro de volta em até 5 dias úteis</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-8 sm:py-12 md:py-16 lg:py-20">
+        <div class="mx-auto max-w-4xl px-4 sm:px-6">
+            <div class="text-center mb-8 sm:mb-12">
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-bold">Perguntas Frequentes</h2>
+                <p class="text-gray-600 mt-2 text-sm sm:text-base">Tire suas dúvidas sobre o Lucro Fácil</p>
+            </div>
+            <div class="space-y-4">
+                <div class="border border-gray-200 rounded-lg">
+                    <button class="w-full px-4 sm:px-6 py-3 sm:py-4 text-left flex items-center justify-between hover:bg-gray-50">
+                        <span class="font-medium text-sm sm:text-base">Como funciona o Lucro Fácil?</span>
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="px-4 sm:px-6 pb-3 sm:pb-4 text-gray-600 text-xs sm:text-sm">
+                        É simples: você informa os dados do seu produto (custo, margem desejada, comissões, meta de faturamento) e o sistema calcula automaticamente o preço ideal, lucro por venda e quantas unidades precisa vender.
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg">
+                    <button class="w-full px-4 sm:px-6 py-3 sm:py-4 text-left flex items-center justify-between hover:bg-gray-50">
+                        <span class="font-medium text-sm sm:text-base">Preciso ter conhecimento técnico?</span>
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="px-4 sm:px-6 pb-3 sm:pb-4 text-gray-600 text-xs sm:text-sm">
+                        Não! O Lucro Fácil foi criado para ser usado por qualquer pessoa. A interface é intuitiva como um chat do WhatsApp e inclui aula completa de como usar.
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg">
+                    <button class="w-full px-4 sm:px-6 py-3 sm:py-4 text-left flex items-center justify-between hover:bg-gray-50">
+                        <span class="font-medium text-sm sm:text-base">Funciona para qualquer tipo de produto?</span>
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="px-4 sm:px-6 pb-3 sm:pb-4 text-gray-600 text-xs sm:text-sm">
+                        Sim! Funciona para produtos físicos, digitais, serviços, consultorias - qualquer coisa que você venda e precise precificar corretamente.
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg">
+                    <button class="w-full px-4 sm:px-6 py-3 sm:py-4 text-left flex items-center justify-between hover:bg-gray-50">
+                        <span class="font-medium text-sm sm:text-base">Como funciona a garantia de 7 dias?</span>
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="px-4 sm:px-6 pb-3 sm:pb-4 text-gray-600 text-xs sm:text-sm">
+                        Você tem 7 dias completos para testar o sistema. Se não ficar satisfeito por qualquer motivo, devolvemos 100% do seu dinheiro sem perguntas.
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg">
+                    <button class="w-full px-4 sm:px-6 py-3 sm:py-4 text-left flex items-center justify-between hover:bg-gray-50">
+                        <span class="font-medium text-sm sm:text-base">O acesso é realmente vitalício?</span>
+                        <svg class="w-4 h-4 sm:w-5 sm:h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="px-4 sm:px-6 pb-3 sm:pb-4 text-gray-600 text-xs sm:text-sm">
+                        Sim! Você paga uma única vez e tem acesso para sempre. Sem mensalidades, sem taxas escondidas, sem pegadinhas.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-12 md:py-20 bg-gradient-to-r from-yellow-600 to-yellow-700">
+        <div class="mx-auto max-w-4xl px-4 text-center text-white">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight">
+                Pronto para descobrir o preço certo e lucrar de verdade?
+            </h2>
+            <p class="mt-4 text-base md:text-lg text-yellow-100 max-w-2xl mx-auto">
+                O Lucro Fácil substitui planilhas, elimina confusão e corta custos. Você tem clareza, praticidade e lucro em segundos.
+            </p>
+            <div class="mt-8 flex flex-wrap justify-center items-center gap-4">
+                <a href="https://pay.cakto.com.br/33ykxnv" target="_blank" onclick="fbq('track', 'InitiateCheckout');" class="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-white px-6 py-4 text-yellow-600 font-semibold shadow hover:bg-yellow-50 transition-colors">
+                    Quero meu acesso ao Lucro Fácil agora →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-900 text-white py-12">
+        <div class="mx-auto max-w-6xl px-4">
+            <div class="text-center">
+                <img src="https://i.postimg.cc/3rbMsc2H/image.png" alt="Lucro Fácil" class="h-20 md:h-32 w-auto mx-auto mb-4">
+                <p class="text-neutral-400 text-sm">
+                    Descubra o preço ideal do seu produto em segundos.
+                </p>
+                <div class="border-t border-neutral-800 mt-8 pt-8">
+                    <p class="text-neutral-400 text-sm">
+                        © 2025 Lucro Fácil. Todos os direitos reservados.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
 </html>
